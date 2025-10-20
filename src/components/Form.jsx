@@ -24,7 +24,7 @@ return (
     
     <label>Hora</label>
     <input
-      type="date"
+      type="time"
       name="time"
       className="u-full-width"
     />
