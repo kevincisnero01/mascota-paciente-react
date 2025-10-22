@@ -24,10 +24,28 @@ const handleChangeState = e => {
 //Extraer valores para evitar escribir ej: appointment.owner
 const {mascot, owner, date, time, symptoms} = appointment;
 
+
+//Funcion para enviar el formulario
+const submitAppointment = e => {
+  e.preventDefault();
+
+  //Validar
+
+  //Asignar ID
+
+  //Crear Cita
+
+  //Reiniciar el Formulario
+
+  console.log('Enviando formulario...')
+}
+
 return (
   <>
   <h1>Crear Cita</h1>
-  <form>
+  <form
+    onSubmit={submitAppointment}
+  >
     <label>Nombre de Mascota</label>
     <input
       type="text"
@@ -82,9 +100,9 @@ return (
       Agregar Cita
     </button>
     
-    <div className='depurar'><pre>
+    {/* <div className='depurar'><pre>
       { JSON.stringify(appointment,null,2)}
-    </pre></div>
+    </pre></div> */}
   
   </form>
   </>
