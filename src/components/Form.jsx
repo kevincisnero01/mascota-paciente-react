@@ -2,7 +2,7 @@ import React,{ useState } from 'react';
 
 const Form = () =>{
 
-//Crear el State de Citas  
+//Crear el state de citas  
 const [appointment, setAppointment] = useState({
   mascot : '',
   owner : '',
@@ -10,6 +10,10 @@ const [appointment, setAppointment] = useState({
   time : '', 
   symptoms : ''
 });
+
+//Crear el state de error
+const [error, setError] = useState(false);
+
 
 //Funcion que se ejecuta cada vez que el usuario escribe en el input
 const handleChangeState = e => {
@@ -29,7 +33,12 @@ const {mascot, owner, date, time, symptoms} = appointment;
 const submitAppointment = e => {
   e.preventDefault();
 
-  //Validar
+  //Validaciones
+  if(mascot.trim() === '' || owner.trim() === '' || date.trim() === '' || time.trim() === '' || symptoms.trim() === ''){
+    setError(true);
+    return;
+  }
+
 
   //Asignar ID
 
@@ -43,6 +52,8 @@ const submitAppointment = e => {
 return (
   <>
   <h1>Crear Cita</h1>
+  { error ? <p className="alerta-error">Todos los campos son obligatorios</p> : null}
+
   <form
     onSubmit={submitAppointment}
   >
