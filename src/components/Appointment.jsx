@@ -13,7 +13,6 @@ const Appointment = ({appointment,destroyAppointment}) => (
             onClick={() =>destroyAppointment(appointment.id)}
           >
             Eliminar &times;
-            ({appointment.id})
           </button>  
         </div>
     </>

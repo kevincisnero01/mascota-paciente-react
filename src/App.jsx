@@ -5,18 +5,22 @@ import Appointment from './components/Appointment.jsx';
 
 function App() {
   
-  //Datos de Relleno
-  const initialData = [
-    {id: '1234', mascot : 'Kelly',owner : 'Keny',date: '2025-10-20',time : '09:00',symptoms : 'Fiebre'},
-    {id: '12345',mascot : 'Pichi',owner : 'Kevin',date: '2025-10-20',time : '09:00',symptoms : 'Herida'},
-    {id: '123456',mascot : 'Mochi',owner : 'Pao',date: '2025-10-20',time : '09:00',symptoms : 'Alergia'}
-  ];
+  //Citas en localStorage
+  let initialQuotes = JSON.parse(localStorage.getItem('appointments'));
+  if(!initialQuotes){
+    initialQuotes = [];
+  }
+
   //Arreglo de Citas (plural)
-  const [appointments, setAppointments] = useState(initialData);
+  const [appointments, setAppointments] = useState(initialQuotes);
   
-  //Funcion que se ejecuta cuando se actuslizan las citas
+  //Hook para realizar operaciones de actualizaciones de state de citas 
   useEffect(() =>{
-    console.log('Citas Actualizadas');
+    if(initialQuotes){
+      localStorage.setItem('appointments',JSON.stringify(appointments));
+    }else{
+      localStorage.setItem('appointments',JSON.stringify([]));
+    }
   }, [appointments])
   
   //Funcion que tome las citas actuales y las agregue
