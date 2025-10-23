@@ -1,7 +1,7 @@
 import React,{ useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-const Form = () =>{
+const Form = ({createAppointment}) =>{
 
 //Crear el state de citas  
 const [appointment, setAppointment] = useState({
@@ -45,15 +45,19 @@ const submitAppointment = e => {
 
   //Asignar ID
   appointment.id = uuidv4();
-  console.log(appointment);
-
-  //Crear la cita
 
   //Crear Cita
+  createAppointment(appointment);
 
   //Reiniciar el Formulario
+  setAppointment({
+    mascot : '',
+    owner : '',
+    date: '',
+    time : '', 
+    symptoms : ''
+  });
 
-  console.log('Enviando formulario...')
 }
 
 return (
