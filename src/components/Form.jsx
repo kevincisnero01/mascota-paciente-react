@@ -62,7 +62,7 @@ const submitAppointment = e => {
 
 return (
   <>
-  <h1>Crear Cita</h1>
+  <h2>Crear Cita</h2>
   { error ? <p className="alerta-error">Todos los campos son obligatorios</p> : null}
 
   <form

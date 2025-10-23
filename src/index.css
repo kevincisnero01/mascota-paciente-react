@@ -56,7 +56,9 @@ input[type="time"] {
   padding: 2rem;
   background: white;
   border-bottom: 1px solid #e1e1e1;
+  border-radius: 1rem;
   color: black;
+  margin: 5px 0px;;
 }
 
 .cita p {
@@ -67,14 +69,15 @@ input[type="time"] {
   font-weight: normal;
 
 }
-.cita:first-of-type {
+
+/* .cita:first-of-type {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
 .cita:last-of-type {
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
-}
+} */
 .button.eliminar,
 .button.eliminar:hover {
   background-color: #c10059;

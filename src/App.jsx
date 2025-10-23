@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import  Form  from './components/Form.jsx'
+import Appointment from './components/Appointment.jsx';
 
 
 function App() {
@@ -24,7 +25,13 @@ function App() {
           />
         </div>
         <div className="one-half column">
-          <p>Sin registros.</p>
+          <h2>Listado de  Cita</h2>
+          { appointments.map(appointment => (
+            <Appointment
+              key={appointment.id}
+              appointment={appointment}
+            />
+          ))}
         </div>
       </div>
       </div>
