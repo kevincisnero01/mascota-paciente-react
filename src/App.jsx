@@ -38,28 +38,35 @@ const destroyAppointment = id =>{
 const title = appointments.length === 0 ? "No hay Citas" : "Administra tus Citas";
 
   return (
-    <>
-      <h1>Administrador de Pacientes</h1>
-      <div className="container">
-      <div className="row">
-        <div className="one-half column">
+    <div className="min-h-screen bg-gradient-to-r from-indigo-500 to-blue-600">
+      <div className="container mx-auto px-4 py-10">
+        <h1 className="font-black text-white text-4xl md:text-5xl text-center">
+          Administrador de Pacientes&nbsp;
+          <span className="text-yellow-300">Veterinaria</span>
+        </h1>
+
+        <div className="mt-12 md:flex md:gap-x-10">
+          <div className="md:w-1/2">
           <Form 
             createAppointment = {createAppointment}
           />
         </div>
-        <div className="one-half column">
-          <h2>{title}</h2>
+          <div className="md:w-1/2 mt-10 md:mt-0">
+            <h2 className="font-black text-white text-3xl text-center mb-5">
+              {title}
+            </h2>
+
           { appointments.map(appointment => (
             <Appointment
               key={appointment.id}
               appointment={appointment}
               destroyAppointment={destroyAppointment}
             />
-          ))}
+          )) }
         </div>
       </div>
       </div>
-    </>
+    </div>
   )
 }
 
