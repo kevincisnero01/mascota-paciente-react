@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import  Form  from './components/Form.jsx'
 import Appointment from './components/Appointment.jsx';
-
+import Alert from './components/Alert.jsx';
 
 function App() {
   
@@ -34,9 +34,6 @@ const destroyAppointment = id =>{
   setAppointments(newAppointment);
 }
 
-//Titulo Condicional
-const title = appointments.length === 0 ? "No hay Citas" : "Administra tus Citas";
-
   return (
     <div className="min-h-screen bg-gradient-to-r from-indigo-500 to-blue-600">
       <div className="container mx-auto px-4 py-10">
@@ -52,9 +49,15 @@ const title = appointments.length === 0 ? "No hay Citas" : "Administra tus Citas
           />
         </div>
           <div className="md:w-1/2 mt-10 md:mt-0">
+          {appointments.length === 0 ? (
+            <Alert type="info" title="¡Información!">
+              Comienza agregando pacientes y aparecerán en este lugar.
+            </Alert>
+          ) : (
             <h2 className="font-black text-white text-3xl text-center mb-5">
-              {title}
+              Administra tus Citas
             </h2>
+          )}
 
           { appointments.map(appointment => (
             <Appointment
