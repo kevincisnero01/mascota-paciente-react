@@ -42,7 +42,7 @@ const destroyAppointment = id =>{
           <span className="text-yellow-300">Veterinaria</span>
         </h1>
 
-        <div className="mt-12 md:flex md:gap-x-10">
+        <div className="mt-6 md:flex md:gap-x-10">
           <div className="md:w-1/2">
           <Form 
             createAppointment = {createAppointment}
@@ -54,9 +54,14 @@ const destroyAppointment = id =>{
               Comienza agregando pacientes y aparecerán en este lugar.
             </Alert>
           ) : (
-            <h2 className="font-black text-white text-3xl text-center mb-5">
-              Administra tus Citas
-            </h2>
+            <div className="relative">
+                <h2 className="font-black text-white text-3xl text-center mb-5">
+                  Administra tus Cita
+                  <span className="absolute right-0 rounded-full bg-emerald-500 px-3 font-mono text-md font-medium  text-white">
+                    { appointments.length }
+                  </span>
+                </h2>
+            </div>
           )}
 
           { appointments.map(appointment => (
