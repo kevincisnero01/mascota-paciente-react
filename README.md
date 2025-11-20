@@ -1,13 +1,16 @@
-# Administrador de Citas de Pacientes con React
+# 🐶 Administrador de Citas Veterinarias con React
 
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Tailwind CSS](https://img.shields.io/badge/tailwind_css-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 
-Una aplicación web simple construida con React para administrar citas de pacientes (mascotas). Permite a los usuarios agregar, ver y eliminar citas de forma intuitiva. Los datos se guardan localmente en el navegador utilizando `localStorage` para asegurar la persistencia entre sesiones.
+Este proyecto es una aplicación web (SPA) desarrollada con React que simula un sistema de gestión de citas médicas básicas, enfocado en pacientes veterinarios. La aplicación permite a los usuarios registrar y listar las citas, capturando la información esencial de la mascota, los datos del dueño y los síntomas reportados.
 
-Este proyecto fue desarrollado como una práctica fundamental para aprender y aplicar los conceptos clave de React.
+El desarrollo se centró en la práctica de la manipulación de formularios, la gestión de un array de objetos en el estado principal para simular una base de datos de citas, y la renderización dinámica de componentes. Funciona como un CRUD básico (Crear, Listar) esencial para el manejo de colecciones de datos en el frontend.
 
+---
+## 🖥️ Vista Previa
+A continuación, se muestra una captura de pantalla de la interfaz de la aplicación:
 
+![Capture de Pantalla](src/assets/screenshot.png)
 ---
 
 ## ✨ Características
@@ -72,3 +75,14 @@ src/
 ├── App.jsx               # Componente principal (orquesta estado y lógica)
 └── main.jsx              # Punto de entrada de la aplicación
 ```
+
+## 🛣️ Hoja de Ruta (Roadmap)
+
+El proyecto está en constante mejora. Estas son las funcionalidades planificadas para el crecimiento del administrador de citas:
+
+- [x] Creación y Listado de Citas: Permitir el registro de nuevas citas y su visualización inmediata en la lista. (Funcionalidad actual)
+- [ ] Edición de Citas: Implementar la funcionalidad para seleccionar una cita existente y modificar sus campos (mascota, dueño, síntomas, etc.).
+- [ ] Persistencia de Datos: Integrar el almacenamiento con localStorage para que las citas persistan al recargar el navegador.
+- [ ] Eliminación Individual: Añadir un botón para eliminar citas específicas del listado y actualizar el estado.
+- [ ] Filtrado Dinámico: Agregar campos de búsqueda para filtrar citas por nombre de la mascota o nombre del dueño.
+- [ ] Validación Avanzada: Implementar validación de formularios más robusta para asegurar que todos los campos obligatorios sean completados antes del envío.
